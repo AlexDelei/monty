@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  *main - runs the bytecodes line by line
  *@argc:number of arguments

@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MONTY_H
+#define MONTY_H
 #define MAX_LINE_LENGTH 1024
 
 #include <stdio.h>

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * execute_instruction - executes the given instruction
  * @stack: pointer to the stack
