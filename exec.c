@@ -13,6 +13,8 @@ void execute_instruction(stack_t **stack, char *instruction, unsigned int line_n
 		pall(stack, line_number);
 	else if (strcmp(instruction, "pop") == 0)
 		pop(stack, line_number);
+	else if (strcmp(instruction, "pint") == 0)
+		pint(stack, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, instruction);
