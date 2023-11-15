@@ -17,6 +17,8 @@ void execute_instruction(stack_t **stack, char *instruction, unsigned int line_n
 		pint(stack, line_number);
 	else if (strcmp(instruction, "swap") == 0)
 		swap(stack, line_number);
+	else if (strcmp(instruction, "add") == 0)
+		add(stack, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, instruction);
