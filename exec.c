@@ -13,7 +13,7 @@ void execute_instruction(stack_t **stack, char *instruction, unsigned int line_n
 	}
 	else if (strcmp(instruction, "pall") == 0)
 	{
-		pall(stack);
+		pall(stack, line_number);
 	}
 	else
 	{

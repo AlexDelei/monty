@@ -35,6 +35,6 @@ typedef struct instruction_s
 } instruction_t;
 
 void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack);
+void pall(stack_t **stack, unsigned int line_number);
 void execute_instruction(stack_t **stack, char *instruction, unsigned int line_number);
 #endif

@@ -4,8 +4,9 @@
  * @stack: pointer to the stack
  * @line_number: line number of the opcode in the Monty file
  */
-void pall(stack_t **stack)
+void pall(stack_t **stack, unsigned int line_number)
 {
+	(void)line_number;
 	stack_t *current = *stack;
 
 	while (current != NULL)
