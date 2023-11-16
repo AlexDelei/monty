@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		{
 			if (fscanf(file, "%d", &value) == 1)
 			{
-				execute_instruction(&stack, opcode, value, line_number);
+				push(&stack, value, line_number);
 			}
 			else
 			{
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			}
 		}
 		else if (strcmp(opcode, "pall") == 0)
-			execute_instruction(&stack, opcode, 0, line_number);
+			pall(&stack, line_number);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
