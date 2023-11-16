@@ -7,12 +7,13 @@
  */
 int main(int argc, char *argv[])
 {
-	stack_t *stack;
 	int value;
 	unsigned int line_number = 0;
 	char opcode[5];
+	char input_string[20];
 	FILE *file = fopen(argv[1], "r");
 
+	stack_t *stack = NULL;
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: %s file\n", argv[0]);
@@ -28,8 +29,14 @@ int main(int argc, char *argv[])
 		line_number++;
 		if (strcmp(opcode, "push") == 0)
 		{
-			if (fscanf(file, "%d", &value) == 1)
+			if (fscanf(file, "%s", input_string) == 1)
 			{
+				value = atoi(input_string);
+				if (value == 0)
+				{
+					fprintf(stderr, "L%d: usage: push integer\n", line_number);
+					exit(EXIT_FAILURE);
+				}
 				push(&stack, value, line_number);
 			}
 			else
