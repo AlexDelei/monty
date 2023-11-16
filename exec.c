@@ -2,13 +2,14 @@
 /**
  * execute_instruction - executes the given instruction
  * @stack: pointer to the stack
+ * @value:digit
  * @instruction: opcode to execute
  * @line_number: line number of the opcode in the Monty file
  */
-void execute_instruction(stack_t **stack, char *instruction, unsigned int line_number)
+void execute_instruction(stack_t **stack, char *instruction, int value, unsigned int line_number)
 {
 	if (strcmp(instruction, "push") == 0)
-		push(stack, line_number);
+		push(stack, value, line_number);
 	else if (strcmp(instruction, "pall") == 0)
 		pall(stack, line_number);
 	else if (strcmp(instruction, "pop") == 0)

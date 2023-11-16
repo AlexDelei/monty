@@ -7,10 +7,10 @@
  */
 int main(int argc, char *argv[])
 {
-	stack_t *stack, *temp;
-	char line[MAX_LINE_LENGTH];
+	stack_t *stack;
+	int value;
 	unsigned int line_number = 0;
-	char opcode[MAX_LINE_LENGTH];
+	char opcode[5];
 	FILE *file = fopen(argv[1], "r");
 
 	if (argc != 2)
@@ -23,20 +23,29 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (fgets(line, sizeof(line), file) != NULL)
+	while (fscanf(file, "%s", opcode) != EOF)
 	{
 		line_number++;
-		if (sscanf(line, "%s", opcode) == 1)
+		if (strcmp(opcode, "push") == 0)
 		{
-			execute_instruction(&stack, opcode, line_number);
+			if (fscanf(file, "%d", &value) == 1)
+			{
+				execute_instruction(&stack, opcode, value, line_number);
+			}
+			else
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				exit(EXIT_FAILURE);
+			}
+		}
+		else if (strcmp(opcode, "pall") == 0)
+			execute_instruction(&stack, opcode, 0, line_number);
+		else
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+			exit(EXIT_FAILURE);
 		}
 	}
 	fclose(file);
-	while (stack != NULL)
-	{
-		temp = stack;
-		stack = stack->next;
-		free(temp);
-	}
 	return (0);
 }
