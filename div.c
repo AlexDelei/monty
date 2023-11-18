@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * div_op - divides the second top element of the stack by the top element
  * @stack: pointer to the stack
