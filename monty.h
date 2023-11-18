@@ -44,5 +44,6 @@ void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void div_op(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
 void execute_instruction(stack_t **stack, char *instruction, int value, unsigned int line_number);
 #endif
