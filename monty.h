@@ -49,5 +49,6 @@ void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 int is_ascii(int c);
+void pchar(stack_t **stack, unsigned int line_number);
 void execute_instruction(stack_t **stack, char *instruction, int value, unsigned int line_number);
 #endif
