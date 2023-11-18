@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: %s file\n", argv[0]);
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	if (file == NULL)
