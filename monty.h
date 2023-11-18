@@ -4,6 +4,7 @@
 #define EXIT_FAILURE 1
 
 #include <stdio.h>
+#include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 /**
@@ -46,5 +47,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void div_op(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+int is_ascii(int c);
 void execute_instruction(stack_t **stack, char *instruction, int value, unsigned int line_number);
 #endif
