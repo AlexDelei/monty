@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 			nop(&stack, line_number);
 		else
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+			/*fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);*/
 			exit(EXIT_FAILURE);
 		}
 	}
