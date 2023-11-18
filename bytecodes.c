@@ -27,6 +27,12 @@ int main(int argc, char *argv[])
 	while (fscanf(file, "%s", opcode) != EOF)
 	{
 		line_number++;
+		if (opcode[0] == '#')
+		{
+			while (fgetc(file) != '\n')
+				continue;
+			continue;
+		}
 		if (strcmp(opcode, "push") == 0)
 		{
 			if (fscanf(file, "%s", input_string) == 1)
