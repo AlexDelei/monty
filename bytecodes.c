@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 			}
 			else
 			{
-				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				fprintf(stderr, "L%d: usage: push integer\n", line_number + 1);
 				exit(EXIT_FAILURE);
 			}
 		}
