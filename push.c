@@ -32,13 +32,11 @@ void push(stack_t **stack, const char *value, unsigned int line_number)
 	num = atoi(value);
 	new_node->n = num;
 	new_node->mode = (*stack) ? (*stack)->mode : 0;
+	new_node->prev = NULL;
+	new_node->next = *stack;
 	if (*stack != NULL)
 	{
-		new_node->next = *stack;
 		(*stack)->prev = new_node;
 	}
-	else
-		new_node->next = NULL;
-	new_node->prev = NULL;
 	*stack = new_node;
 }
