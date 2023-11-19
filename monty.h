@@ -22,6 +22,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
+	int mode;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -39,6 +40,8 @@ typedef struct instruction_s
 
 void free_stack(stack_t *stack);
 int is_string(const char *input);
+void queue(stack_t **stack, unsigned int line_number);
+void shtack(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, const char *value, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
