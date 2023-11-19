@@ -7,7 +7,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int value;
 	unsigned int line_number = 0;
 	char opcode[260];
 	char input_string[20];
@@ -37,8 +36,7 @@ int main(int argc, char *argv[])
 		{
 			if (fscanf(file, "%s", input_string) == 1)
 			{
-				value = atoi(input_string);
-				push(&stack, value, line_number);
+				push(&stack, input_string, line_number);
 			}
 			else
 			{
