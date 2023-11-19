@@ -72,7 +72,6 @@ int main(int argc, char *argv[])
 			rotl(&stack, line_number);
 		else
 		{
-			fprintf(stdout, "0\n");
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			exit(EXIT_FAILURE);
 		}
