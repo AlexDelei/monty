@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	int value;
 	unsigned int line_number = 0;
-	char opcode[5];
+	char opcode[260];
 	char input_string[20];
 	FILE *file = fopen(argv[1], "r");
 
@@ -38,11 +38,6 @@ int main(int argc, char *argv[])
 			if (fscanf(file, "%s", input_string) == 1)
 			{
 				value = atoi(input_string);
-				if (value == 0)
-				{
-					fprintf(stderr, "L%d: usage: push integer\n", line_number);
-					exit(EXIT_FAILURE);
-				}
 				push(&stack, value, line_number);
 			}
 			else
@@ -75,6 +70,8 @@ int main(int argc, char *argv[])
 			pchar(&stack, line_number);
 		else if (strcmp(opcode, "pstr") == 0)
 			pstr(&stack, line_number);
+		else if (strcmp(opcode, "rotl") == 0)
+			rotl(&stack, line_number);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

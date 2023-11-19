@@ -15,6 +15,11 @@ void push(stack_t **stack, int value, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	if (value < 0 || value > 127)
+	{
+		fprintf(stderr, "L%d: value out of ASCII range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = *stack;
