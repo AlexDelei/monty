@@ -26,9 +26,9 @@ int main(int argc, char *argv[])
 	while (fscanf(file, "%s", opcode) != EOF)
 	{
 		line_number++;
-		if (opcode[0] == '#')
+		if (opcode[0] == '\0' || opcode[0] == '#')
 		{
-			while (fgetc(file) != '\n')
+			while (fgetc(file) != '\n' && fgetc(file) != EOF)
 				continue;
 			continue;
 		}

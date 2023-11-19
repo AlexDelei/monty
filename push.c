@@ -20,7 +20,7 @@ void push(stack_t **stack, const char *value, unsigned int line_number)
 	{
 		if (!isdigit((unsigned char)*ptr))
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number + 1);
 			exit(EXIT_FAILURE);
 		}
 	}
