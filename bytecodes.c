@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	unsigned int line_number = 0;
-	char opcode[260];
+	char opcode[5];
 	char input_string[20];
 	FILE *file = fopen(argv[1], "r");
 
