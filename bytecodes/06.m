@@ -1,6 +1,2 @@
-push 1
-pint
-push 2
+push 98
 pint Holberton
-push 3
-pint

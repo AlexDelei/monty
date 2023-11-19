@@ -36,6 +36,11 @@ int main(int argc, char *argv[])
 		{
 			if (fscanf(file, "%s", input_string) == 1)
 			{
+				if (!is_string(input_string))
+				{
+					fprintf(stdout, "0\n");
+					continue;
+				}
 				push(&stack, input_string, line_number);
 			}
 			else
@@ -72,8 +77,7 @@ int main(int argc, char *argv[])
 			rotl(&stack, line_number);
 		else
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 	}
 	fclose(file);
