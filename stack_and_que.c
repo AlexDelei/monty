@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * stack - sets the format of the data to a stack (LIFO)
+ * shtack - sets the format of the data to a stack (LIFO)
  * @stack: pointer to the stack
  * @line_number: line number of the opcode in the Monty file
  */
