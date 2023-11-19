@@ -7,11 +7,14 @@
  */
 int is_string(const char *input)
 {
-	while (*input)
+	size_t i;
+
+	for (i = 0; i < strlen(input); i++)
 	{
-		if (!isprint((unsigned char)*input))
-			return (0);
-		++input;
+		if (!isalnum(input[i]))
+		{
+			return (1);
+		}
 	}
-	return (1);
+	return (0);
 }
